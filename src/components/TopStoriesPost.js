@@ -17,28 +17,34 @@ function TopStoriesPost({ posts }) {
   }
 
   return (
-    <div>
+    <div style={{backgroundColor: "#fffef2"}}>
       <ul style={{paddingInlineStart: 18}}>
-        {posts.map((post) => (
-          <li
-            key={post.id}
-            style={{ marginBlock: "5px",}}
-          >
-         
-              <p style={{ marginBlock: 0, fontSize: "15px" }}>
-                <a
-                  href={post.url}
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  {post.title}
-                </a>
-              </p>
-              <p style={{ marginBlock: 0, fontSize: "11px", color: "gray" }}>
-                {post.score} by {post.by}
-              </p>
- 
-          </li>
-        ))}
+        {posts.map((post) => {
+          const { id, url, title, score, by } = post;
+          let domain = (new URL(url));
+          console.log(domain.origin);
+          return (
+          
+            <li
+              key={id}
+              style={{ marginBlock: "5px",}}
+            >
+           
+                <p style={{ marginBlock: 0, fontSize: "15px" }}>
+                  <a
+                    href={url}
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    {title} <span style={{color: "#3f3f3f", fontSize: '12px'}}>({domain.host})</span>
+                  </a>
+                </p>
+                <p style={{ marginBlock: 0, fontSize: "11px", color: "#3f3f3f" }}>
+                  {score} by {by}
+                </p>
+   
+            </li>
+          )
+        } )}
       </ul>
     </div>
   );

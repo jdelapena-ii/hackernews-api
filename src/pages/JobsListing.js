@@ -26,13 +26,13 @@ function JobsListing() {
           );
         const result = await Promise.all(promises);
         setPosts(result);
-        console.log(posts);
+        
       } catch (err) {
         console.error(err);
       }
     }
     getJobs();
-  }, [posts]);
+  }, []);
 
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;

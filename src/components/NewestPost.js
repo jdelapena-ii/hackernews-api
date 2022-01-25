@@ -17,23 +17,26 @@ function NewestPost({ posts }) {
   }
 
   return (
-    <div>
+    <div style={{backgroundColor: "#fffef2"}}>
       <ul style={{ paddingInlineStart: 18 }}>
-        {posts.map((post) => (
-          <li key={post.id} style={{ marginBlock: "5px" }}>
-            <p style={{ marginBlock: 0, fontSize: "15px" }}>
-              <a
-                href={post.url}
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                {post.title}
-              </a>
-            </p>
-            <p style={{ marginBlock: 0, fontSize: "11px", color: "gray" }}>
-              {post.score} by {post.by} | {post.descendants} comments
-            </p>
-          </li>
-        ))}
+        {posts.map((post) => {
+          const { id, url, title, score, by, descendants } = post;
+          return (
+            <li key={id} style={{ marginBlock: "5px" }}>
+              <p style={{ marginBlock: 0, fontSize: "15px" }}>
+                <a
+                  href={url}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  {title} 
+                </a>
+              </p>
+              <p style={{ marginBlock: 0, fontSize: "11px", color: "#3f3f3f" }}>
+                {score} by {by} | {descendants} comments
+              </p>
+            </li>
+          )
+        })}
       </ul>
     </div>
   );

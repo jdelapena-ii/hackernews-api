@@ -34,7 +34,7 @@ function TopStoriesListing() {
       }
     }
     getTopStories();
-  }, [posts]);
+  }, []);
 
 
   // Get current posts

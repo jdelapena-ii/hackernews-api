@@ -32,7 +32,7 @@ function BestListing() {
       }
     }
     getBest();
-  }, [posts]);
+  }, []);
 
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;

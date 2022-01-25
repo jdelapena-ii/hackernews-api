@@ -27,12 +27,13 @@ function ShowListing() {
           );
         const result = await Promise.all(promises);
         setPosts(result);
+        
       } catch (err) {
         console.error(err);
       }
     }
     getShow();
-  }, [posts]);
+  }, []);
 
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;

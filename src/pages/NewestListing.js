@@ -33,7 +33,7 @@ function NewestListing() {
       }
     }
     getNewest();
-  }, [posts]);
+  }, []);
 
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;

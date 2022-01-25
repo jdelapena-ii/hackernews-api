@@ -27,13 +27,13 @@ function AskListing() {
           );
         const result = await Promise.all(promises);
         setPosts(result);
-        console.log(posts);
+        
       } catch (err) {
         console.error(err);
       }
     }
     getAsk();
-  }, [posts]);
+  }, []);
 
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
