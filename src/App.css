@@ -1,0 +1,15 @@
+.App {
+  text-align: left;
+}
+
+@media (min-width: 600px) {
+  .App {
+    padding: 0px 100px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .App {
+    padding: 0px 150px;
+  }
+}
